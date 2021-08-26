@@ -42,7 +42,7 @@ exit [STATUS]
 env
 ```
 ## AUTHORS
-**Check the *AUTHORS* file**
+> **Check the *AUTHORS* file**
 ### CONTRIBUTION GUIDE
 A **contribution guide** is supposed to be written in a separate file, but permit this here for sometimes. To contribute:
 - *fork* this repo,
@@ -51,4 +51,4 @@ A **contribution guide** is supposed to be written in a separate file, but permi
 - **Add**, **commit**, **push** to the repo
 - **Create** a pull request
 - We will review it, if it is beneficial and not conflicting, it will be merged and you will be added to the **AUTHORS** file.
-- Then you are a contributor :)
+- Then you are a contributor :grinning:.
