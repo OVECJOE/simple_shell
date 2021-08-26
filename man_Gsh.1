@@ -1,0 +1,74 @@
+.TH man 1 "25 August 2021" "Gsh man page"
+.SH NAME
+.B Gsh
+ - Gsh stands for Giant shell, though ironical name...but that is how it was to me when ALX released the first trimester final project called simple_shell. Sorry for the verbosity.
+.SH SYNOPSIS
+.B ./Gsh
+.PP
+-------------------------------
+.PP
+$ [command] [options] [FILE]
+.SH DESCRIPTION
+.B Gsh is an end of the first trimester project for ALX students where we explore, understand, and build a working functional simple shell program.
+.PP
+This is a very simplified version of a shell, similar to bash or dash. We put to practice the knowledge learnt so far - on C - into a real world scenario.
+.SH OPTIONS
+.B Gsh
+operates in two modes which are
+.I interactive
+and
+.I non-interactive
+modes.
+.SH INVOCATION
+.PP
+In the 
+.I interactive 
+mode, the user runs the program according to the SYNOPSIS above and starts slotting in commands that needs be executed.
+.PP
+In the
+.I non-interactive
+mode, the user types in command to the terminal and then pipes it with 
+.B ./Gsh.
+Once that command is executed or not, it returns back to the default shell your terminal started up with.
+.SH EXIT VALUES
+Not specific.
+.PP
+It returns the exit code of the last command inside it or that provided by user.
+.SH EXAMPLES
+.IP
+
+$ ./hsh
+
+Once it becomes a process, a prompt will be displayed. It depends on your system configurations. I will use
+.B $
+here.
+
+$ pwd
+
+.B /root/simple_shell
+
+$ /bin/pwd
+
+.B /root/simple_shell
+
+$ ls -la
+
+.B Expect to see something
+.SH BUILTINS
+There are some built-in commands which are few for now. They are:
+.PP
+.I env
+ - prints the environmental variables
+.PP
+.I exit
+ - quits the program.
+.SH BUGS
+No Known bugs at present. Report if any is discovered to
+.I https://github.com/OVECJOE/simple_shell/issues.
+.SH AUTHORS
+.B Shadrach Kamata
+
+.B OVECJOE
+.SH COPYRIGHT
+.B Gsh
+is Copyright (C) free.
