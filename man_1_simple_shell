@@ -1,96 +1,74 @@
-.TH SIMPLE_SHELL 1 "14 April 2021" "1.0" "custom man page"
+.TH man 1 "25 August 2021" "Gsh man page"
 .SH NAME
-.B Simple Shell
-- command language interpreter
+.B Gsh
+ - Gsh stands for Giant shell, though ironical name...but that is how it was to me when ALX released the first trimester final project called simple_shell. Sorry for the verbosity.
 .SH SYNOPSIS
-.B Simple Shell
+.B ./Gsh
+.PP
+-------------------------------
+.PP
+$ [command] [options] [FILE]
 .SH DESCRIPTION
-The Simple Shell's functionality involves certain shell builtin functions found in the environmental variable.
-.I PATH.
-It does not yet handle piping, redirection, pattern matching, variable expansions, and more extra functions.
-.SS Invocation
-An
+.B Gsh is an end of the first trimester project for ALX students where we explore, understand, and build a working functional simple shell program.
+.PP
+This is a very simplified version of a shell, similar to bash or dash. We put to practice the knowledge learnt so far - on C - into a real world scenario.
+.SH OPTIONS
+.B Gsh
+operates in two modes which are
 .I interactive
-simple shell can be invoked by typing ./simple_shell. Meanwhile, a
+and
 .I non-interactive
-simple shell can also be invoked via a pipe (e.g. echo "/bin/ls" | ./hsh).
-.SS Command Execution
-After a command has been split into words, if it results in a simple command and an optional list of arguments, the following actions are taken.
-.sp
-If the command name contains no slashes, the shell attempts to locate it. If there exists a shell function by that name that function is invoked. If the name does not match a function, the shell searches for it in the list of shell builtins. If a match is found, that builtin is invoked.
-.sp
-If the name is neither a shell function nor a builtin, and contains no slashes, the simple shell searches each element of the environmental variable PATH for a directory containing an executable file by that name. If the search is unsuccessful, the simple shell prints an error message "Error: File or description not found."
-.SS Sample Functions
-.sp
-echo
-.I [arguments]
-      prints to standard output the argument(s) given and prints a newline
-.sp
-ls
-.I [[flags]...[arguments]]
-      lists files in the current directory according to the flags given by user
-.sp
-pwd
-      prints working directories
-.sp
-.SS Shell Builtin Commands
-.sp
-cd
-      changes directory and updates environmental variables OLDPWD and PWD
-.sp
-env
-      prints environmental variables
-.sp
-exit
-      exits out of simple shell and returns to user's original shell
-.sp
-setenv
-      creates non-existing or modifies existing environmental variable within shell session
-.sp
-unsetenv
-      removes existing environmental variable within shell session
-.SH EXAMPLE
-To
-.I invoke
-simple shell:
-.sp
-.RS
-(your_terminal)$ ./hsh
-.RE
-.RS
-.I #cisfun$
-.RE
-.sp
-Usage:
-.sp
-.RS
-.I #cisfun$
-echo "simple shell easy!"
-.RE
-.RS
-.I simple shell easy!
-.RE
-.RS
-.I #cisfun$
-ls -l /tmp
-.RE
-.RS
-.I total 4
-.RE
-.RS
-.I -rw-r--r-- 1 root root 158 Apr 14 07:43 AUTHORS 
-.RE
-.sp
-To exit and return to your terminal:
-.sp
-.RS
-.I @cisfun$
-exit
-.RE
-.RS
-(your_terminal)$
-.RE
+modes.
+.SH INVOCATION
+.PP
+In the 
+.I interactive 
+mode, the user runs the program according to the SYNOPSIS above and starts slotting in commands that needs be executed.
+.PP
+In the
+.I non-interactive
+mode, the user types in command to the terminal and then pipes it with 
+.B ./Gsh.
+Once that command is executed or not, it returns back to the default shell your terminal started up with.
+.SH EXIT VALUES
+Not specific.
+.PP
+It returns the exit code of the last command inside it or that provided by user.
+.SH EXAMPLES
+.IP
+
+$ ./hsh
+
+Once it becomes a process, a prompt will be displayed. It depends on your system configurations. I will use
+.B $
+here.
+
+$ pwd
+
+.B /root/simple_shell
+
+$ /bin/pwd
+
+.B /root/simple_shell
+
+$ ls -la
+
+.B Expect to see something
+.SH BUILTINS
+There are some built-in commands which are few for now. They are:
+.PP
+.I env
+ - prints the environmental variables
+.PP
+.I exit
+ - quits the program.
 .SH BUGS
-No known bugs
+No Known bugs at present. Report if any is discovered to
+.I https://github.com/OVECJOE/simple_shell/issues.
 .SH AUTHORS
-Dennis Wanjeri and Jane Ng'ethe
+.B Shadrach Kamata
+
+.B OVECJOE
+.SH COPYRIGHT
+.B Gsh
+is Copyright (C) free.
