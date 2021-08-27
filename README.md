@@ -41,6 +41,8 @@ exit [STATUS]
 ```
 env
 ```
+## BLOG POST
+I also wrote a blog post on this which you can check out [here](https://www.linkedin.com/pulse/how-shell-works-internally-victor-ohachor).
 ## AUTHORS
 > **Check the *AUTHORS* file**
 ### CONTRIBUTION GUIDE
