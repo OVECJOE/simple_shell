@@ -29,7 +29,7 @@ builtin_t is_builtin(char *cmd)
  *
  * Return: the appropriate function to be executed, else NULL
  */
-int (*check_builtins(char **cmd))(char **, int)
+int (*check_builtins(char **cmd))(char **, int, char *)
 {
 	builtin_t b = is_builtin(cmd[0]);
 
@@ -46,12 +46,13 @@ int (*check_builtins(char **cmd))(char **, int)
  *
  * Return: Always 0
  */
-int env_cmd(char **cmd, int status)
+int env_cmd(char **cmd, int status, char *filename)
 {
 	int i;
 
 	(void) cmd;
 	(void) status;
+	(void) filename;
 
 	for (i = 0; environ[i]; i++)
 	{
@@ -69,9 +70,8 @@ int env_cmd(char **cmd, int status)
  * Return: exit with the status code given by user, or
  * previous execution status code
  */
-int exit_cmd(char **cmd, int status)
+int exit_cmd(char **cmd, int status, char *filename)
 {
-	char *err_msg = "./Gsh: ";
 	int i = 0;
 
 	if (!cmd[1])
@@ -84,7 +84,8 @@ int exit_cmd(char **cmd, int status)
 	{
 		if (_isalpha(cmd[1][i]) && cmd[1][i] != '-')
 		{
-			print(err_msg);
+			print(filename);
+			print(": ");
 			print(cmd[0]);
 			print(": ");
 			print("Illegal number: ");

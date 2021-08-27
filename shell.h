@@ -27,7 +27,7 @@ extern char **environ;
 typedef struct builtin_t
 {
 	char *cmd;
-	int (*f)(char **, int);
+	int (*f)(char **, int, char *);
 } builtin_t;
 
 /*----------//My Function Prototypes\\----------*/
@@ -70,9 +70,9 @@ int _isalpha(char c);
 char *_strdup(char *s);
 
 /* In builtins.c */
-int exit_cmd(char **, int);
-int env_cmd(char **, int);
+int exit_cmd(char **, int, char *);
+int env_cmd(char **, int, char *);
 builtin_t is_builtin(char *cmd);
-int (*check_builtins(char **))(char **, int);
+int (*check_builtins(char **))(char **, int, char *);
 
 #endif

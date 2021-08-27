@@ -9,7 +9,7 @@
  */
 int main(int argc __attribute__((unused)), char *argv[])
 {
-	int (*builtin)(char **, int);
+	int (*builtin)(char **, int, char *);
 	char **tokens;
 	char *line;
 	size_t len = 0;
@@ -37,11 +37,12 @@ int main(int argc __attribute__((unused)), char *argv[])
 		builtin = check_builtins(tokens);
 		if (builtin)
 		{
-			builtin(tokens, status);
+			status = builtin(tokens, status, argv[0]);
 			free_memory_pp(tokens);
 			continue;
 		}
-		status = execute(tokens, argv[0]);
+		else
+			status = execute(tokens, argv[0]);
 
 		free_memory_pp(tokens);
 	}
