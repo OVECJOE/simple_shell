@@ -28,8 +28,11 @@ int main(int argc __attribute__((unused)), char *argv[])
 		if (*line == '\n' || *line == '\0')
 			continue;
 
-		rm_newline(line);
+		line = rm_newline(line);
+
 		tokens = parse_input(line);
+		if (!tokens || !tokens[0])
+			continue;
 
 		builtin = check_builtins(tokens);
 		if (builtin)
